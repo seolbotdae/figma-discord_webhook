@@ -31,7 +31,8 @@ window.onmessage = async (event: MessageEvent<any>) => {
     formData.append(
       "payload_json",
       JSON.stringify({
-        thread_name: threadName,
+        // thread_name: threadName,
+        // thread_id: threadName,
         username: discordData?.username || null,
         content,
         attachments,
@@ -45,6 +46,7 @@ window.onmessage = async (event: MessageEvent<any>) => {
       method: "POST",
       body: formData,
     });
+
     const code = response.status;
     const status = code >= 200 && code < 300 ? "success" : "error";
 
