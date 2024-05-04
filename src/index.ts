@@ -95,7 +95,7 @@ figma.on("run", async ({ parameters }: RunEvent) => {
 
   // Add attachment details to the content
   if (shareLinks) {
-    content += `> ${getKoreanTime()}\n\n`
+    content += `> ${getDateTime()}\n\n`
 
     attachmentsData.forEach((attachment, index) => {
       content += `[Link to Figma : ${attachment.name}](<${attachment.url}>)\n`;
@@ -121,7 +121,7 @@ figma.on("run", async ({ parameters }: RunEvent) => {
   setTimeout(() => figma.ui.postMessage(msg), 1);
 });
 
-function getKoreanTime(): string {
+function getDateTime(): string {
   const now: Date = new Date();
 
   const year: number = now.getFullYear();
