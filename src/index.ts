@@ -135,5 +135,5 @@ function getDateTime(): string {
   const formattedHours: string = hours.toString().padStart(2, '0');
   const formattedMinutes: string = minutes.toString().padStart(2, '0');
 
-  return `${year}년 ${formattedMonth}월 ${formattedDay}일 ${formattedHours}:${formattedMinutes}`;
+  return `${year}.${formattedMonth}.${formattedDay} ${formattedHours}:${formattedMinutes}`;
 }
