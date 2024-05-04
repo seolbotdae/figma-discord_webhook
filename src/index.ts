@@ -95,8 +95,10 @@ figma.on("run", async ({ parameters }: RunEvent) => {
 
   // Add attachment details to the content
   if (shareLinks) {
+    content += `> ${getKoreanTime()}\n\n`
+
     attachmentsData.forEach((attachment, index) => {
-      content += `[Link to Figma : ${attachment.name}](<${attachment.url}>)\n${getKoreanTime()}\n`;
+      content += `[Link to Figma : ${attachment.name}](<${attachment.url}>)\n`;
     });
   }
 
