@@ -8,7 +8,8 @@
   "scripts": {
     "clean": "rimraf dist",
     "watch": "parcel watch --no-hmr",
-    "build": "npm run clean && parcel build"
+    "build": "npm run clean && parcel build",
+    "env": "./env_setting.sh"
   },
   "targets": {
     "code": {
