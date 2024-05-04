@@ -1,5 +1,5 @@
 {
-  "name": "WIP",
+  "name": "commit",
   "id": "1136745882239085583",
   "api": "1.0.0",
   "main": "dist/index.js",
@@ -11,20 +11,9 @@
   ],
   "parameters": [
     {
-      "name": "Thread name",
-      "key": "threadName",
-      "allowFreeform": true,
-      "optional": false
-    },
-    {
       "name": "Description",
       "key": "description",
       "allowFreeform": true,
-      "optional": true
-    },
-    {
-      "name": "Share links to Figma?",
-      "key": "shareLinks",
       "optional": true
     }
   ],
