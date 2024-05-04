@@ -123,7 +123,7 @@ function getKoreanTime(): string {
   const now: Date = new Date();
 
   const year: number = now.getFullYear();
-  const month: number = now.getMonth() + 1; // 월은 0부터 시작하므로 1을 더해줍니다.
+  const month: number = now.getMonth() + 1;
   const day: number = now.getDate();
   const hours: number = now.getHours();
   const minutes: number = now.getMinutes();
