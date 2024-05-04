@@ -5,6 +5,11 @@ This repository is based on Bryanberger's figma-discord-upload-webhook for impro
 Existing repositories include.
 https://github.com/bryanberger/figma-discord-upload-webhook
 
+## How to use
+
+<img src = "Readme-img-Step.jpg">
+<img src = "Readme-img-Works.jpg">
+<img src = "Readme-img-Info.jpg">
 
 ## License
 
