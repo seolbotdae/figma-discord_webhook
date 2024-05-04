@@ -8,6 +8,10 @@ figma.showUI(__html__, { visible: false });
 figma.ui.onmessage = async (data: PluginMessage) => {
   const { status, code } = data;
 
+  console.log(data)
+  console.log(status)
+  console.log(code)
+
   const message =
     status === "success"
       ? "Successfully uploaded!"
@@ -46,7 +50,8 @@ figma.on("run", async ({ parameters }: RunEvent) => {
       node.type === "COMPONENT" ||
       node.type === "INSTANCE" ||
       node.type === "VECTOR" ||
-      node.type === "SECTION"
+      node.type === "SECTION" ||
+      node.type === "COMPONENT_SET"
   );
 
   // Check if the user has selected any nodes
@@ -86,12 +91,12 @@ figma.on("run", async ({ parameters }: RunEvent) => {
   );
 
   // Construct Content
-  let content = description ? `${description}\n` : "";
+  let content = description ? `## \`${description}\`\n` : "";
 
   // Add attachment details to the content
   if (shareLinks) {
     attachmentsData.forEach((attachment, index) => {
-      content += `- [Figma link ${index + 1}](<${attachment.url}>)\n`;
+      content += `[Link to Figma : ${attachment.name}](<${attachment.url}>)\n${getKoreanTime()}\n`;
     });
   }
 
@@ -113,3 +118,20 @@ figma.on("run", async ({ parameters }: RunEvent) => {
 
   setTimeout(() => figma.ui.postMessage(msg), 1);
 });
+
+function getKoreanTime(): string {
+  const now: Date = new Date();
+
+  const year: number = now.getFullYear();
+  const month: number = now.getMonth() + 1; // 월은 0부터 시작하므로 1을 더해줍니다.
+  const day: number = now.getDate();
+  const hours: number = now.getHours();
+  const minutes: number = now.getMinutes();
+
+  const formattedMonth: string = month.toString().padStart(2, '0');
+  const formattedDay: string = day.toString().padStart(2, '0');
+  const formattedHours: string = hours.toString().padStart(2, '0');
+  const formattedMinutes: string = minutes.toString().padStart(2, '0');
+
+  return `${year}년 ${formattedMonth}월 ${formattedDay}일 ${formattedHours}:${formattedMinutes}`;
+}
